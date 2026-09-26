@@ -1,13 +1,6 @@
 console.log("The OC Generator is working!");
 
 const ocTypeInput = document.getElementById("ocType");
-const eyeColorInput = document.getElementById("eyeColor");
-const hairColorInput = document.getElementById("hairColor");
-const personalityInput = document.getElementById("personality");
-const siblingsInput = document.getElementById("siblings");
-const animalInput = document.getElementById("animal");
-const favoriteColorInput = document.getElementById("favoriteColor");
-const favoriteFoodInput = document.getElementById("favoriteFood");
 const generateButton = document.getElementById("generateButton");
 const result = document.getElementById("result");
 
@@ -120,7 +113,15 @@ const fairyRules = {
             Other: "Dealer's Choice!!"
         }
     },
-
+    bgColor: {
+        input: "season",
+        values: {
+            Spring: "Pink",
+            Summer: "Yellow",
+            Fall: "Orange",
+            Winter: "Blue"
+        }
+    },
     output: [
         ["Wings", "wings"],
         ["Sparkles", "sparkles"],
@@ -128,7 +129,8 @@ const fairyRules = {
         ["Hair Type", "hairType"],
         ["Eye Color", "eyeColor"],
         ["Hair Color", "hairColor"],
-        ["Accesssory", "accessory"]
+        ["Accesssory", "accessory"],
+        ["BG Color", "bgColor"]
     ]
 }
 
@@ -212,7 +214,15 @@ const witchRules = {
         Other: "Underwater Familiar"
             }
     },
-
+    potion: {
+        input: "season",
+        values: {
+            Spring: "Happiness Potion",
+            Summer: "Relaxing Potion",
+            Fall: "Love Potion",
+            Winter: "Energy Potion"
+        }
+    },
     output: [
         ["Outfit Color", "outfitColor"],
         ["Magic", "magic"],
@@ -220,11 +230,216 @@ const witchRules = {
         ["Aesthetic", "aesthetic"],
         ["Hair Type", "hairType"],
         ["Eye Color", "eyeColor"],
-        ["Hair Color", "hairColor"]
+        ["Hair Color", "hairColor"],
+        ["Potion Type", "potion"]
+    ]
+}
+
+const magicalGirlRules = {
+    hairType: {
+        input: "eyeColor",
+        values: {
+            Blue: "Long with Bangs",
+            Green: "Twin Tails",
+            Brown: "Short and Curly",
+            Black: "Ponytail with Bangs",
+            Other: "Short Bob"
+        }
+    },
+    magicTool: {
+        input: "siblings",
+        values: {
+            0: "Bow and Arrow",
+            1: "Gun",
+            2: "Spectral Knife",
+            3: "Magical Wand"
+        }
+    },
+    bgColor: {
+        input: "hairColor",
+        values: {
+            Red: "Reds",
+            Brown: "Browns",
+            Blonde: "Monotone",
+            Black: "Black/White",
+            Gray: "Pastels",
+            Dyed: "Rainbow"
+        }
+    },
+    emotion: {
+        input: "favoriteFood",
+        values: {
+            Fruits: "Happy",
+            Veggies: "Sad",
+            Grains: "Neutral",
+            Dairy: "Excited",
+            Sweets: "Depressed",
+            Protein: "Angry"
+        }
+    },
+    hairColor: {
+        input: "personality",
+        values: {
+            Calm: "Brown and Black",
+            Chaotic: "Rainbow and Fun",
+            Extraverted: "Dark and Cools",
+            Introverted: "Bright and Pastel",
+            Normal: "Salt and Pepper"
+        }
+    },
+    eyeColor: {
+        input: "favoriteColor",
+        values: {
+            Red: "Red Eyes",
+            Orange: "Orange Eyes",
+            Yellow: "Yellow Eyes",
+            Green: "Green Eyes",
+            Blue: "Blue Eyes",
+            Purple: "Purple Eyes",
+            Pink: "Pink Eyes",
+            Brown: "Brown Eyes",
+            Gray: "Gray Eyes",
+            Black: "Black Eyes",
+            White: "White Eyes"
+        }
+    },
+    aesthetic: {
+        input: "animal",
+        values: {
+            None: "Aliencore",
+            Dogs: "Avantguarde",
+            Cats: "Dark Romantic",
+            Reptiles: "Horror/Grundgy",
+            Birds: "Flower Power",
+            Rodents: "Renaissance",
+            Other: "Kawaii"
+        }
+    },
+    outfitType: {
+        input: "season",
+        values: {
+            Spring: "Ballgown",
+            Summer: "School Girl",
+            Fall: "Goth Lolita",
+            Winter: "Formal Wear"
+        }
+    },
+    output: [
+        ["Hair Type", "hairType"],
+        ["Magical Tool", "magicTool"],
+        ["BG Color", "bgColor"],
+        ["Emotion", "emotion"],
+        ["Hair Color", "hairColor"],
+        ["Eye Color", "eyeColor"],
+        ["Aesthetic", "aesthetic"],
+        ["Outfit Type", "outfitType"]
+    ]
+}
+
+const foodGirlRules = {
+    hairColor: {
+        input: "eyeColor",
+        values: {
+            Blue: "Blue Hair",
+            Green: "Green Hair",
+            Brown: "Brown Hair",
+            Black: "Black Hair",
+            Other: "No Hair/BALD"
+        }
+    },
+    bgColor: {
+        input: "siblings",
+        values: {
+            0: "Baby Blues",
+            1: "Pink and Reds",
+            2: "Monotone",
+            3: "Yellow and Green"
+        }
+    },
+    eyeColor: {
+        input: "hairColor",
+        values: {
+            Red: "Red Eyes",
+            Brown: "Brown Eyes",
+            Blonde: "White Eyes",
+            Black: "Black Eyes",
+            Gray: "Blue Eyes",
+            Dyed: "Purple Eyes"
+        }
+    },
+    accessory: {
+        input: "favoriteFood",
+        values: {
+            Fruits: "Handbag",
+            Veggies: "Umbrella",
+            Grains: "Calculator",
+            Dairy: "Pet of Choice",
+            Sweets: "Backpack",
+            Protein: "Ring"
+        }
+    },
+    cleanliness: {
+        input: "personality",
+        values: {
+            Calm: "Clean and Pristine",
+            Chaotic: "Messy and Dripping",
+            Extraverted: "A bit Messy",
+            Introverted: "Very Tidy",
+            Normal: "Not Messy, not Clean"
+        }
+    },
+    aesthetic: {
+        input: "favoriteColor",
+        values: {
+            Red: "KnightCore",
+            Orange: "Lolita",
+            Yellow: "Medieval Fantasy",
+            Green: "Neon Noir",
+            Blue: "Oceanpunk",
+            Purple: "PrincessCore",
+            Pink: "QueenCore",
+            Brown: "Romantic Goth",
+            Gray: "Steampunk",
+            Black: "Trailer Park",
+            White: "UrbanCore"
+        }
+    },
+    foodType: {
+        input: "animal",
+        values: {
+            None: "Water",
+            Dogs: "Pizza",
+            Cats: "Pasta",
+            Reptiles: "Tacos",
+            Birds: "Sushi",
+            Rodents: "Curry",
+            Other: "Ice Cream"
+        }
+    },
+    emotion: {
+        input: "season",
+        values: {
+            Spring: "Ballgown",
+            Summer: "School Girl",
+            Fall: "Goth Lolita",
+            Winter: "Formal Wear"
+        }
+    },
+    output: [
+        ["Food Type", "foodType"],
+        ["Accessory", "accessory"],
+        ["BG Color", "bgColor"],
+        ["Emotion", "emotion"],
+        ["Hair Color", "hairColor"],
+        ["Eye Color", "eyeColor"],
+        ["Aesthetic", "aesthetic"],
+        ["Cleanliness", "cleanliness"]
     ]
 }
 
 const allRules = {
     Fairy: fairyRules,
     Witch: witchRules,
+    MagicalGirl: magicalGirlRules,
+    FoodGirl: foodGirlRules,
 }
