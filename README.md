@@ -8,10 +8,10 @@ A Web-based OC Generator for Artists, Writers, and Illustrators!!
 - Personality Type: Calm, Chaotic, Extrovert, Introvert, and Normal
 - Siblings: 0, 1, 2, 3+
 - Pets/Favorite Animal: None, Dogs, Cats, Reptiles, Birds, Rodents, and Other
-- Favorite Color: ROYGBIV, Pink, Black, White, Brown, and Gray
+- Favorite Color: Red, Orange, Yellow, Green, Blue, Purple, Pink, Black, White, Brown, and Gray
 - Favorite Food: Fruits, Veggies, Grains, Dairy, Sweets, and Protein
 - Birth Season: Spring, Summer, Fall, and Winter
-- OC Type: Fairy, Witch, Magical Girl, Food, Mermaid, Occult (Generalized), Silly, Surprise Me!
+- OC Type: Fairy, Witch, Magical Girl, Food, Mermaid, and Surprise Me!
 
 ## SPOILERS:
 
