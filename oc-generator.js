@@ -6,7 +6,12 @@ const result = document.getElementById("result");
 
 
 generateButton.addEventListener("click", function() {
-    const ocType = ocTypeInput.value;
+    let ocType = ocTypeInput.value;
+
+    if (ocType === "Surprise Me!") {
+        const randomIndex = Math.floor(Math.random() * ocTypes.length);
+        ocType = ocTypes[randomIndex];
+    }
 
     const rules = allRules[ocType];
 
@@ -437,9 +442,119 @@ const foodGirlRules = {
     ]
 }
 
+const mermaidRules = {
+    emotion: {
+        input: "eyeColor",
+        values: {
+            Blue: "Sad",
+            Green: "Excited",
+            Brown: "Neutral",
+            Black: "Happy",
+            Other: "In-Love"
+        }
+    },
+    tailColor: {
+        input: "siblings",
+        values: {
+            0: "Pink and Reds",
+            1: "Blues and Purples",
+            2: "Monotone",
+            3: "Yellow and Green"
+        }
+    },
+    aesthetic: {
+        input: "hairColor",
+        values: {
+            Red: "VSCO Girl",
+            Brown: "BalletCore",
+            Blonde: "Y2k Futurism",
+            Black: "Art Deco",
+            Gray: "Coquette",
+            Dyed: "DreamCore"
+        }
+    },
+    eyeColor: {
+        input: "favoriteFood",
+        values: {
+            Fruits: "Red Eyes",
+            Veggies: "Green Eyes",
+            Grains: "Blue Eyes",
+            Dairy: "Brown Eyes",
+            Sweets: "Purple Eyes",
+            Protein: "Black Eyes"
+        }
+    },
+    mermaidType: {
+        input: "personality",
+        values: {
+            Calm: "Kind Mermaid",
+            Chaotic: "Evil Siren",
+            Extraverted: "Harpy-Esque",
+            Introverted: "Quiet Siren",
+            Normal: "Normal Mermaid"
+        }
+    },
+    magic: {
+        input: "favoriteColor",
+        values: {
+            Red: "Fire Magic",
+            Orange: "Sunshine Magic",
+            Yellow: "Paint Magic",
+            Green: "Earth Magic",
+            Blue: "Seashell Magic",
+            Purple: "Royalty Magic",
+            Pink: "Fairy Magic",
+            Brown: "Ground Magic",
+            Gray: "Rock Magic",
+            Black: "Psychic Magic",
+            White: "Kindness Magic"
+        }
+    },
+    hairColor: {
+        input: "animal",
+        values: {
+            None: "Bald/No Hair",
+            Dogs: "Brown Hair",
+            Cats: "Blonde Hair",
+            Reptiles: "Black Hair",
+            Birds: "Red Hair",
+            Rodents: "Gray Hair",
+            Other: "Rainbow Hair"
+        }
+    },
+    accessory: {
+        input: "season",
+        values: {
+            Spring: "Seashells",
+            Summer: "Sea Creature Friend",
+            Fall: "Seaweed",
+            Winter: "Ice and Snow"
+        }
+    },
+    output: [
+        ["Tail Color", "tailColor"],
+        ["Accessory", "accessory"],
+        ["Magic", "magic"],
+        ["Emotion", "emotion"],
+        ["Hair Color", "hairColor"],
+        ["Eye Color", "eyeColor"],
+        ["Aesthetic", "aesthetic"],
+        ["Mermaid Type", "mermaidType"]
+    ]
+}
+
 const allRules = {
     Fairy: fairyRules,
     Witch: witchRules,
     MagicalGirl: magicalGirlRules,
     FoodGirl: foodGirlRules,
+    Mermaid: mermaidRules
 }
+
+const ocTypes = [
+    "Fairy",
+    "Witch",
+    "Magical Girl",
+    "Food Girl",
+    "Mermaid"
+]

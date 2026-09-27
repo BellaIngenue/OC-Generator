@@ -51,3 +51,12 @@ A Web-based OC Generator for Artists, Writers, and Illustrators!!
   - Aesthetic: Favorite Color
   - Food Type: Favorite Animal
   - Emotion: Birth Season
+- Mermaid Connections:
+  - Emotion: Eye Color
+  - Tail Color: Siblings
+  - Aesthetic: Hair Color
+  - Eye Color: Favorite Food
+  - Mermaid Type: Personality
+  - Magic: Favorite Color
+  - Hair Color: Favorite Animal
+  - Accessory: Birth Season
