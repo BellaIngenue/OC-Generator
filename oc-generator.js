@@ -3,9 +3,10 @@ console.log("The OC Generator is working!");
 const ocTypeInput = document.getElementById("ocType");
 const generateButton = document.getElementById("generateButton");
 const result = document.getElementById("result");
+const formContainer = document.querySelector(".form-container");
 
 
-generateButton.addEventListener("click", function() {
+generateButton.addEventListener("click", function () {
     let ocType = ocTypeInput.value;
 
     if (ocType === "Surprise Me!") {
@@ -33,9 +34,41 @@ generateButton.addEventListener("click", function() {
     `;
     }
     result.innerHTML = `
-    <h2>Your ${ocType} OC!</h2>
-    ${outputHTML}
+        <div class="character-card">
+    
+            <div class="card-header">
+                <h2>✦ Your New OC! ✦</h2>
+            </div>
+    
+            <div class="oc-illustration">
+                <img src="oc-placeholder.png" alt="${ocType} illustration">
+            </div>
+    
+            <h3 class="oc-type">♡ ${ocType} ♡</h3>
+    
+            <div class="oc-details">
+                ${outputHTML}
+            </div>
+    
+            <button id="backButton" class="back-button">
+                ← Make Another OC
+            </button>
+    
+        </div>
 `;
+    formContainer.classList.add("hide");
+
+    const characterCard = result.querySelector(".character-card");
+
+    requestAnimationFrame(function () {
+        characterCard.classList.add("show");
+    });
+    const backButton = document.getElementById("backButton");
+
+    backButton.addEventListener("click", function () {
+        result.innerHTML = "";
+        formContainer.classList.remove("hide");
+    });
 });
 
 const fairyRules = {
@@ -105,7 +138,7 @@ const fairyRules = {
             Introverted: "Brown Eyes",
             Normal: "Black Eyes"
         }
-        },
+    },
     accessory: {
         input: "animal",
         values: {
@@ -210,14 +243,14 @@ const witchRules = {
     familiar: {
         input: "animal",
         values: {
-        None: "No Familiar",
-        Dogs: "Dog Familiar",
-        Cats: "Cat Familiar",
-        Reptiles: "Reptile Familiar",
-        Birds: "Bird Familiar",
-        Rodents: "Rodent Familiar",
-        Other: "Underwater Familiar"
-            }
+            None: "No Familiar",
+            Dogs: "Dog Familiar",
+            Cats: "Cat Familiar",
+            Reptiles: "Reptile Familiar",
+            Birds: "Bird Familiar",
+            Rodents: "Rodent Familiar",
+            Other: "Underwater Familiar"
+        }
     },
     potion: {
         input: "season",
@@ -558,3 +591,10 @@ const ocTypes = [
     "Food Girl",
     "Mermaid"
 ]
+
+const backButton = document.getElementById("backButton");
+
+backButton.addEventListener("click", function () {
+    result.innerHTML = "";
+    formContainer.classList.remove("hide");
+});
