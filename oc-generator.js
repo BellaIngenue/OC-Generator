@@ -4,8 +4,8 @@ const ocTypeInput = document.getElementById("ocType");
 const generateButton = document.getElementById("generateButton");
 const result = document.getElementById("result");
 const formContainer = document.querySelector(".form-container");
-const generateSound = new Audio("assets/sounds/generator-sound.mp3");
-const backSound = new Audio("assets/sounds/back-sound.mp3");
+const generateSound = new Audio("assets/audio/generator-sound.mp3");
+const backSound = new Audio("assets/audio/back-sound.mp3");
 
 
 generateButton.addEventListener("click", function () {
